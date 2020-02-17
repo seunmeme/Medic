@@ -16,7 +16,9 @@
         <p class="card-text"> {{ object.description }} </p>
         <h5 class="card-title">Date Added </h5>
         <p class="card-text"> {{ object.created_at }} </p>
+        {% if user.profile.designation %}
         <a href="{% url 'record' %}" class="btn btn-primary">Go back to records</a>
+        {% endif %}
     </div>
 </div>
 

@@ -34,23 +34,23 @@
                   <a class="nav-link" href="#">Link</a>
                 </li> -->
               </ul>
-              {% if title %}
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                {% else %}
+               
                 <div class="navbar-nav">
                   {% if user.is_authenticated %}
                     <p class="text-info nav-link">Welcome {{ user.username }}!</p>
-                    <a href="{% url 'new_record' %}" class="nav-tem nav-link">Add Medical Record</a>
+                    {% if user.profile.designation %}
+                      <a href="{% url 'record' %}" class="nav-tem nav-link">View Medical Records</a>
+                      
+                    {% else %}
+                      <a href="{% url 'new_record' %}" class="nav-tem nav-link">Add Medical Record</a>
+                    {% endif %}
                     <a href="{% url 'logout' %}" class="nav-tem nav-link">Logout</a>
                   {% else %}
                     <a href="{% url 'register' %}" class="nav-tem nav-link">Medical Practitioners</a>
                     <a href="{% url 'user_signup' %}" class="nav-tem nav-link">Patients</a>
                   {% endif %}
                 </div>
-              {% endif %}
+              
             </div>
           </nav>
           {% if messages %}

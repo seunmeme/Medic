@@ -4,7 +4,12 @@
 <div class="mt-4">
     <h2>Click on a name to view details of a record</h2>
 </div>
+<form action="{% url 'search' %}" class="form-inline my-2 my-lg-4">
+  <input class="form-control mr-sm-2 w-50" type="search" name="condition" placeholder="Search by Medical condition (e.g Malaria, Typhoid etc.)" aria-label="Search">
+  <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+</form>
 <table class="table mt-5">
+  {% if records %}
     <thead>
       <tr>
         <th scope="col">Full Name</th>
@@ -15,15 +20,19 @@
       </tr>
     </thead>
     <tbody>
-        {% for record in records %}
-        <tr>    
-            <td><a href="{% url 'record_detail' record.id %}">{{ record.firstname }} {{ record.lastname }}</a></td>
-            <td>{{ record.condition }}</td>
-            <td>{{ record.telephone }}</td>
-            <td>{{ record.gender }}</td>
-            <td>{{ record.created_by }}</td>
-        </tr>
-        {% endfor%}
+        
+          {% for record in records %}
+            <tr>    
+              <td><a href="{% url 'record_detail' record.id %}">{{ record.firstname }} {{ record.lastname }}</a></td>
+              <td>{{ record.condition }}</td>
+              <td>{{ record.telephone }}</td>
+              <td>{{ record.gender }}</td>
+              <td>{{ record.created_by }}</td>
+            </tr>
+          {% endfor%}
+        {% else %}
+          <p>No medical records available</p>
+        {% endif%}
     </tbody>
   </table>
 
