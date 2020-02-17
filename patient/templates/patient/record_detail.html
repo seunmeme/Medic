@@ -1,0 +1,25 @@
+{% extends "patient/layout.html" %}
+
+{% block content %}
+<div class="card mt-5 mb-5 mx-auto" style="width: 35rem;">
+    <div class="card-body">
+        <h2 class="card-title mb-4">Medical Record for {{ object.firstname }} {{ object.lastname }} </h2>
+        <h5 class="card-title">Phone Number</h5>
+        <p class="card-text"> {{ object.telephone }} </p>
+        <h5 class="card-title">Address </h5>
+        <p class="card-text"> {{ object.address }} </p>
+        <h5 class="card-title">Gender </h5>
+        <p class="card-text"> {{ object.gender }} </p>
+        <h5 class="card-title">Medical Condition </h5>
+        <p class="card-text"> {{ object.condition }} </p>
+        <h5 class="card-title">Description </h5>
+        <p class="card-text"> {{ object.description }} </p>
+        <h5 class="card-title">Date Added </h5>
+        <p class="card-text"> {{ object.created_at }} </p>
+        <a href="{% url 'record' %}" class="btn btn-primary">Go back to records</a>
+    </div>
+</div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,31 @@
+{% extends "patient/layout.html" %}
+
+{% block content %}
+<div class="mt-4">
+    <h2>Click on a name to view details of a record</h2>
+</div>
+<table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Medical Condition</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Created By</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>    
+            <td><a href="{% url 'record_detail' record.id %}">{{ record.firstname }} {{ record.lastname }}</a></td>
+            <td>{{ record.condition }}</td>
+            <td>{{ record.telephone }}</td>
+            <td>{{ record.gender }}</td>
+            <td>{{ record.created_by }}</td>
+        </tr>
+        {% endfor%}
+    </tbody>
+  </table>
+
+{% endblock content %}
+

@@ -1,0 +1,28 @@
+{% extends "patient/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card mt-5 mb-5 mx-auto" style="width: 35rem;">
+    
+  
+  <form class="p-5" action="" method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+          <legend class="border-bottom mb-4">
+              Register Now
+          </legend>
+          {{ form | crispy }}
+      </fieldset>
+      <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">
+                Sign Up
+          </button>
+          <small class="text-muted ml-3">
+          Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+      </small>
+      </div>
+  </form>
+</div>
+
+{% endblock content %}
+

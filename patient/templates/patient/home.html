@@ -1,0 +1,22 @@
+{% extends "patient/layout.html" %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><h1 class="mt-3">Medic Home Page</h1></li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-3">
+
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fas fa-user"></i> Agents</li>
+                <li class="list-group-item"><i class="fas fa-home"></i> Subscribers Database</li>
+                <li class="list-group-item"><i class="fas fa-clipboard-list"></i> Evacuation Log</li>
+                <li class="list-group-item"><i class="fas fa-file-invoice-dollar"></i> Payment Log</li>
+                <li class="list-group-item"><i class="fas fa-chart-line"></i> Statistics</li>
+            </ul>
+        </div>
+    </div>
+{% endblock content %}
+
