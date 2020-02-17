@@ -1,6 +1,7 @@
 {% extends "patient/layout.html" %}
 
 {% block content %}
+{% if user.profile.designation %}
 <div class="mt-4">
     <h2>Click on a name to view details of a record</h2>
 </div>
@@ -35,6 +36,10 @@
         {% endif%}
     </tbody>
   </table>
-
+{% else %}
+<div class="mt-5 pl-3">
+  <p>You are not permitted to view this page.</p>
+</div>
+{% endif%}
 {% endblock content %}
 

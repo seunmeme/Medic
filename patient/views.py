@@ -1,12 +1,22 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Record
+from practitioner.models import Profile
 from django.views.generic import ListView, DetailView, CreateView
 
 # Create your views here.
 def home(request):
-    return render(request, 'patient/home.html')
+    records = Record.objects.order_by('-created_at')
+    practitioners = Profile.objects.all()
+    users = User.objects.all()
+    context = {
+        'records': records,
+        'practitioners': practitioners,
+        'users': users
+        }
+    return render(request, 'patient/home.html', context)
 
 def search(request):
     records = Record.objects.order_by('-created_at')

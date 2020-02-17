@@ -20,7 +20,7 @@
   <body>
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'medic-home' %}"><h1></h1>Medic</h1></a>
+            <a class="navbar-brand" href="{% url 'medic-home' %}"><h1>Medic</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,8 +46,8 @@
                     {% endif %}
                     <a href="{% url 'logout' %}" class="nav-tem nav-link">Logout</a>
                   {% else %}
-                    <a href="{% url 'register' %}" class="nav-tem nav-link">Medical Practitioners</a>
-                    <a href="{% url 'user_signup' %}" class="nav-tem nav-link">Patients</a>
+                    <a href="{% url 'register' %}" class="nav-tem nav-link text-primary">Medical Practitioners</a>
+                    <a href="{% url 'user_signup' %}" class="nav-tem nav-link text-primary">Patients</a>
                   {% endif %}
                 </div>
               
