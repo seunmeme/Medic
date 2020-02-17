@@ -44,7 +44,7 @@
                     {% else %}
                       <a href="{% url 'new_record' %}" class="nav-tem nav-link">Add Medical Record</a>
                     {% endif %}
-                    <a href="{% url 'logout' %}" class="nav-tem nav-link">Logout</a>
+                    <a href="{% url 'logout' %}" class="nav-tem nav-link text-danger">Logout</a>
                   {% else %}
                     <a href="{% url 'register' %}" class="nav-tem nav-link text-primary">Medical Practitioners</a>
                     <a href="{% url 'user_signup' %}" class="nav-tem nav-link text-primary">Patients</a>
