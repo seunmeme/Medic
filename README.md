@@ -4,7 +4,7 @@ A simple web app that allows patients and medical practitioners manage healthcar
 
 ## To check the app online
 
-Visit [Medic App](https://medicapp.herokuapp.com/)
+Visit [Medic App](https://mymedicapp.herokuapp.com/)
 
 ## Author
 
